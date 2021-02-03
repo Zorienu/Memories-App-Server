@@ -7,11 +7,11 @@ import postsRoutes from "./routes/posts.js";
 
 const app = express();
 
-app.use("/posts", postsRoutes);
-
 app.use(bodyParser.json({ limit: "30mb", extended: true })); // we're gonna send images, they can be large
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true })); // we're gonna send images, they can be large
 app.use(cors());
+
+app.use("/posts", postsRoutes);
 
 console.log("connecting to db");
 const MONGO_URI =
