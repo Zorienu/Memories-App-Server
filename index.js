@@ -15,6 +15,8 @@ app.use(cors());
 
 app.use("/posts", postsRoutes);
 
+app.use("/", (req, res) => res.send("Hello from heroku API"));
+
 console.log("connecting to db");
 const PORT = process.env.PORT || 5000;
 
