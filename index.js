@@ -5,6 +5,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 
 import postsRoutes from "./routes/posts.js";
+import usersRoutes from "./routes/users.js";
 
 const app = express();
 dotenv.config();
@@ -14,6 +15,7 @@ app.use(bodyParser.urlencoded({ limit: "30mb", extended: true })); // we're gonn
 app.use(cors());
 
 app.use("/posts", postsRoutes);
+app.use("/user", usersRoutes);
 
 app.use("/", (req, res) => res.send("Hello from heroku API"));
 
